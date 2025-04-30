@@ -137,7 +137,7 @@ class TokenPruner(nn.Module):
 
         # Top-k token indices
         _, topk_ids = torch.topk(
-            importance_scores, compressed_length, dim=1, sorted=False
+            importance_scores, compressed_length,  sorted=False
         ) # [seq_len]
         # Sort to preserve order
         # topk_ids = torch.sort(topk_ids, dim=1)[0] # [1, seq_len]
